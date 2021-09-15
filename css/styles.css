@@ -59,6 +59,14 @@ body {
     min-height: 300px;
 }
 
+a.carousel-control-next {
+    max-height: 250px;
+}
+
+a.carousel-control-prev {
+    max-height: 250px;
+}
+
 #carouselButton {
     right: 0px;
     position: absolute;
