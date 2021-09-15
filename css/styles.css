@@ -59,9 +59,16 @@ body {
     min-height: 300px;
 }
 
+#carouselButton {
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+}
+
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
