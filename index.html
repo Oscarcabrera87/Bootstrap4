@@ -44,7 +44,7 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginBtn" href="#loginModal">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
 
@@ -53,12 +53,14 @@
         </div>
     </nav>
 
+<!-- Modals - login -->
+
     <div id="loginModal" class="col-10 col-md-8 modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header bg-warning text-white">
+                <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button id="loginClose" type="button" class="close" >
                         &times;
                     </button>
                 </div>
@@ -107,16 +109,18 @@
 
         </div>
     </div>
+
+    <!-- Modal - rez -->
     <div id="rezModal" class="col-10 col-sm-8 modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header bg-warning ">
-                    <h3 class="modal-title text-white">Reserve a table</h3>
-                    <button type="button" class="close" data-dismiss="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reserve a table</h3>
+                    <button id="rezClose" type="button" class="close">
                         &times;
                     </button>
                 </div>
-                <div class="m-3 modal-body">
+                <div class="modal-body">
                     <form id="reservation">
                         <div class="form-group row flex-row">
                             <label for="rez"
@@ -228,6 +232,8 @@
         </div>
     </div>
 
+<!-- Jumbotron container -->
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -243,7 +249,7 @@
 
                     </div>
                     <div class="col-12 col-sm-6 align-self-center">
-                        <a data-toggle="modal" data-target="#rezModal"
+                        <a id="rezBtn" href="#rezModal"
                             class="btn btn-sm btn-warning btn-block"
                             role="button">Reserve a Table</a>
                     </div>
@@ -251,7 +257,7 @@
             </div>
         </div>
     </header>
-
+<!-- Carousel block -->
     <div class="container">
         <div class="row row-content">
             <div class="col">
@@ -338,7 +344,7 @@
                         <span class="carousel-control-next-icon"></span>
                     </a>
                     </div>
-                    <div>
+                    <div id="play_pause-space">
                     <button class="btn btn-danger btn-sm" id="carouselButton">
                         <span id="carousel-button-icon" class="fa fa-pause"></span>
                     </button>
@@ -348,6 +354,7 @@
             </div>
         </div>
     </div>
+<!-- Container body - uthappy block-->
     <div class="container">
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
@@ -376,7 +383,7 @@
             </div>
         </div>
 
-
+<!-- Container body - buffet block -->
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
@@ -401,7 +408,7 @@
                 </div>
             </div>
         </div>
-
+<!-- Container Body - alberto block -->
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Meet our Culinary Specialists</h3>
@@ -429,7 +436,7 @@
     </div>
 
 
-
+<!-- footer -->
 
 
     <footer class="footer">
@@ -505,7 +512,22 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
+            $('#loginBtn').click(function(){
+                $('#loginModal').modal('show');
+            });
+            $('#loginClose').click(function(){
+                $('#loginModal').modal('hide');
+                
+            });
+            $('#rezBtn').click(function(){
+                $('#rezModal').modal('show');
+            });
+            $('#rezClose').click(function(){
+                $('#rezModal').modal('hide');
+            });
+
         });
+        
     </script>
 </body>
 
